@@ -141,7 +141,8 @@ p {
   width:100%;
   perspective:1500px;
 }
-.image img {
+
+.image {
   background: transparent;
   width:100%;
   border-radius:20px;
