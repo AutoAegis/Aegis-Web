@@ -1,0 +1,141 @@
+:root {
+  --gold: #C8852E;
+  --black: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: white;
+  font-family: 'Cinzel', serif;
+  overflow-x: hidden;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(20px);
+  background: rgba(0,0,0,0.65);
+  z-index: 1000;
+}
+
+.nav-brand {
+  letter-spacing: 0.3em;
+  font-size: 14px;
+}
+
+.delta {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.section {
+  min-height: 100vh;
+  padding: 140px 8vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero {
+  background:
+    radial-gradient(circle at top, rgba(200,133,46,0.18), transparent 45%),
+    #000;
+  text-align: center;
+}
+
+.brand {
+  font-size: clamp(4rem, 9vw, 8rem);
+  letter-spacing: 0.3em;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin-top: 24px;
+  max-width: 600px;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6vw;
+}
+
+.split img {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow:
+    0 40px 100px rgba(200,133,46,0.18);
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  margin-top: 20px;
+  background: var(--gold);
+}
+
+.gallery {
+  flex-direction: column;
+}
+
+.gallery-grid {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 30px 80px rgba(200,133,46,0.12);
+}
+
+.footer {
+  text-align: center;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(80px) scale(0.96);
+  transition:
+    opacity 1.4s ease,
+    transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.delay { transition-delay: 0.25s; }
+.delay2 { transition-delay: 0.45s; }
+
+@media (max-width: 900px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
