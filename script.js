@@ -16,6 +16,6 @@ reveals.forEach(el => observer.observe(el))
 window.addEventListener("scroll", () => {
   const y = window.scrollY
   document.querySelectorAll("img").forEach(img => {
-    img.style.transform = `translateY(${y * 0.045}px) scale(1.05)`
+    img.style.transform = `translateY(${y * 0.04}px) scale(1.06)`
   })
 })
