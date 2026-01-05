@@ -26,7 +26,7 @@ nav {
 .section { min-height:100vh; padding:150px 8vw; display:flex; align-items:center; justify-content:center; flex-direction:column; position:relative; }
 
 .hero { text-align:center; overflow:hidden; }
-.pattern { position:absolute; inset:0; background-image:url('AegisOrg.png'); background-size:cover; background-position:center; opacity:0.06; mix-blend-mode:overlay; transform:scale(1.2); z-index:0; }
+.pattern { position:absolute; inset:0; background-image:url('AegisOrg.jpeg'); background-size:cover; background-position:center; opacity:0.06; mix-blend-mode:overlay; transform:scale(1.2); z-index:0; }
 
 .hero-backdrop { position:absolute; inset:0; display:flex; justify-content:center; align-items:center; overflow:hidden; z-index:1; pointer-events:none; }
 .backdrop-layer { position:absolute; width:60%; max-width:900px; opacity:0.08; animation:sway 12s ease-in-out infinite alternate; filter:brightness(0.4) contrast(1.2); }
