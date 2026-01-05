@@ -1,6 +1,5 @@
 :root {
   --gold: #C8852E;
-  --black: #000;
 }
 
 * {
@@ -11,7 +10,7 @@
 
 body {
   background: #000;
-  color: white;
+  color: #fff;
   font-family: 'Cinzel', serif;
   overflow-x: hidden;
 }
@@ -22,49 +21,64 @@ nav {
   width: 100%;
   height: 72px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  backdrop-filter: blur(20px);
+  align-items: center;
+  backdrop-filter: blur(18px);
   background: rgba(0,0,0,0.65);
   z-index: 1000;
 }
 
 .nav-brand {
-  letter-spacing: 0.3em;
   font-size: 14px;
+  letter-spacing: 0.35em;
 }
 
 .delta {
   color: var(--gold);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .section {
   min-height: 100vh;
-  padding: 140px 8vw;
+  padding: 150px 8vw;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .hero {
-  background:
-    radial-gradient(circle at top, rgba(200,133,46,0.18), transparent 45%),
-    #000;
+  position: relative;
   text-align: center;
+  background: radial-gradient(circle at top, rgba(200,133,46,0.2), transparent 45%), #000;
+}
+
+.pattern {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(200,133,46,0.05),
+    rgba(200,133,46,0.05) 2px,
+    transparent 2px,
+    transparent 14px
+  );
+}
+
+.hero-content {
+  position: relative;
 }
 
 .brand {
-  font-size: clamp(4rem, 9vw, 8rem);
-  letter-spacing: 0.3em;
-  font-weight: 600;
+  font-size: clamp(4.5rem, 9vw, 8.5rem);
+  letter-spacing: 0.35em;
+  font-weight: 700;
 }
 
 p {
   font-size: 1.1rem;
-  opacity: 0.8;
+  opacity: 0.85;
   margin-top: 24px;
-  max-width: 600px;
+  max-width: 650px;
 }
 
 .split {
@@ -75,23 +89,27 @@ p {
 
 .split img {
   width: 100%;
-  border-radius: 18px;
-  box-shadow:
-    0 40px 100px rgba(200,133,46,0.18);
+  border-radius: 20px;
+  box-shadow: 0 50px 120px rgba(200,133,46,0.18);
 }
 
 h2 {
   font-size: 3rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 h2::after {
   content: "";
   display: block;
-  width: 80px;
+  width: 90px;
   height: 2px;
-  margin-top: 20px;
+  margin-top: 22px;
   background: var(--gold);
+}
+
+.power {
+  text-align: center;
+  background: linear-gradient(to bottom, transparent, rgba(200,133,46,0.07), transparent);
 }
 
 .gallery {
@@ -99,28 +117,31 @@ h2::after {
 }
 
 .gallery-grid {
-  margin-top: 60px;
+  margin-top: 70px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  gap: 34px;
 }
 
 .gallery-grid img {
   width: 100%;
-  border-radius: 16px;
-  box-shadow: 0 30px 80px rgba(200,133,46,0.12);
+  border-radius: 18px;
+  box-shadow: 0 35px 90px rgba(200,133,46,0.15);
 }
 
 .footer {
   text-align: center;
 }
 
+.sigil {
+  font-size: 5rem;
+  margin-bottom: 30px;
+}
+
 .reveal {
   opacity: 0;
-  transform: translateY(80px) scale(0.96);
-  transition:
-    opacity 1.4s ease,
-    transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(90px) scale(0.95);
+  transition: opacity 1.6s ease, transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.visible {
@@ -128,8 +149,13 @@ h2::after {
   transform: translateY(0) scale(1);
 }
 
-.delay { transition-delay: 0.25s; }
-.delay2 { transition-delay: 0.45s; }
+.delay {
+  transition-delay: 0.3s;
+}
+
+.delay2 {
+  transition-delay: 0.6s;
+}
 
 @media (max-width: 900px) {
   .split {
