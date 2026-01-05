@@ -143,7 +143,6 @@ p {
 }
 
 .image {
-  background: transparent;
   width:100%;
   border-radius:20px;
   box-shadow:0 50px 120px rgba(200,133,46,0.2);
