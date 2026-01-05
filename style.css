@@ -44,6 +44,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .hero {
@@ -75,19 +76,21 @@ nav {
 }
 
 p {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   opacity: 0.85;
-  margin-top: 24px;
-  max-width: 650px;
+  margin-top: 18px;
+  max-width: 700px;
+  text-align: center;
 }
 
 .split {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 6vw;
+  width: 100%;
 }
 
-.split img {
+.image img {
   width: 100%;
   border-radius: 20px;
   box-shadow: 0 50px 120px rgba(200,133,46,0.18);
@@ -96,6 +99,7 @@ p {
 h2 {
   font-size: 3rem;
   font-weight: 600;
+  margin-bottom: 30px;
 }
 
 h2::after {
@@ -103,30 +107,51 @@ h2::after {
   display: block;
   width: 90px;
   height: 2px;
-  margin-top: 22px;
+  margin: 22px auto 0;
   background: var(--gold);
 }
 
-.power {
-  text-align: center;
-  background: linear-gradient(to bottom, transparent, rgba(200,133,46,0.07), transparent);
+.ranks {
+  gap: 26px;
 }
 
-.gallery {
-  flex-direction: column;
-}
-
-.gallery-grid {
-  margin-top: 70px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 34px;
-}
-
-.gallery-grid img {
+.rank {
+  max-width: 900px;
   width: 100%;
-  border-radius: 18px;
-  box-shadow: 0 35px 90px rgba(200,133,46,0.15);
+  padding: 26px 32px;
+  border: 1px solid rgba(200,133,46,0.25);
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+}
+
+.rank span {
+  display: block;
+  font-size: 1.4rem;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+}
+
+.rank p {
+  text-align: left;
+  margin-top: 10px;
+}
+
+.power {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+}
+
+.image-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .footer {
@@ -159,9 +184,6 @@ h2::after {
 
 @media (max-width: 900px) {
   .split {
-    grid-template-columns: 1fr;
-  }
-  .gallery-grid {
     grid-template-columns: 1fr;
   }
 }
