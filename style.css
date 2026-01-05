@@ -142,10 +142,11 @@ p {
   perspective:1500px;
 }
 .image img {
+  background: transparent;
   width:100%;
   border-radius:20px;
   box-shadow:0 50px 120px rgba(200,133,46,0.2);
-  transition:transform 1s ease,filter 1s ease;
+  transition:transform 1s ease, filter 1s ease;
 }
 
 h2 {
